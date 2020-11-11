@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h2>Registration</h2>
+<form name="registration" onsubmit="return validatePassword()">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name"><br>
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email" required><br>
+  <label for="password">Password:</label><br>
+  <input type="text" id="password" name="password"><br>
+  <label for="repassword"> Reenter Password:</label><br>
+  <input type="text" id="repassword" name="repassword"><br>
+  <label for="phone">Phone:</label><br>
+  <input type="number" id="phone" name="phone"><br>
+  <label for="address">Address:</label><br>
+  <input type="text" id="address" name="address"><br><br><br>
+  <input type="submit" value="Submit">
+ 
+  
+</form>
+</head>
+<body>
+<script>
+
+function validatePassword() {
+  var pw = document.forms["registration"]["password"].value;
+  var con =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,16}$/;
+  
+  if (pw.match(con)){
+    alert("Password is good")
+    return true;
+    } else{
+    alert("Please include at least one UPPER CASE, LOWER CASE letter and NUMBER")
+    alert("Minimum length is 3 , Maximum length is 16")
+    return false
+   } 
+   
+}  
+</script>
+</body>
+</html>

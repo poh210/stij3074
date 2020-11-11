@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h2>Registration</h2>
+<form name="registration" action="/register.php" onsubmit="return validatePassword()">
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email" required><br>
+  <label for="password">Password:</label><br>
+  <input type="text" id="password" name="password"><br>
+  <input type="submit" value="Submit">
+  <br><br><br><br>
+  <a href=registration.html>Registration</a>
+
+</form>
+</head>
+<body>
+<script>
+
+  function validatePassword() {
+    var pw = document.forms["registration"]["password"].value;
+    var con =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,16}$/;
+    
+    if (pw.match(con)){
+      alert("Password is good")
+      return true;
+      } else{
+      alert("Please include at least one UPPER CASE, LOWER CASE letter and NUMBER")
+      alert("Minimum length is 3 , Maximum length is 16")
+      return false
+     } 
+     
+  }  
+</script>
+</body>
+</html>
